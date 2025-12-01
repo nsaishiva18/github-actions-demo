@@ -1,5 +1,5 @@
 name: My Github workflow
-run-name: ${{ github.actor }} is testing CI/CD with GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing CI/CD with GitHub Actions by disabling one job🚀
 on:
   push:
     branches:
@@ -10,6 +10,7 @@ env:
   
 jobs:
   First-GitHub-Job:
+    if: true
     runs-on: ubuntu-latest
     steps:
       - run: echo "Checkout the repo"
