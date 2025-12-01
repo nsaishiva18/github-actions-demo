@@ -1,0 +1,20 @@
+name: My Github workflow
+run-name: ${{ github.actor }} is testing CI/CD with GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PROJECT_NAME: github-actions-demo
+  
+jobs:
+  First-GitHub-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Checkout the repo"
+      - name: Checkout Repo 
+        uses: actions/checkout@v4
+      - run: printenv
+      - run: echo "this is the env ${{ env.PROJECT_NAME  }} implementing by CI/CD "
+
